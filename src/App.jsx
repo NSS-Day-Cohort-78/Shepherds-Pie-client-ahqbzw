@@ -1,5 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import "./App.css"
+import { Order } from "./components/order/Order"
 
 function App() {
 	return (
@@ -12,7 +13,7 @@ function App() {
 						<Outlet />
 					</>
 				}>
-				<Route index element={<div>Order</div>} />
+				<Route index element={<Order/>} />
 			</Route>
 		</Routes>
 	)
