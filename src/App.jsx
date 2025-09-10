@@ -2,6 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import "./App.css"
 import { Order } from "./components/order/Order"
 import { Nav } from "./components/nav/Nav"
+import { ShoppingCart } from "./components/shopping-cart/ShoppingCart"
 function App() {
     return (
         <Routes>
@@ -15,6 +16,7 @@ function App() {
                 }
             >
                 <Route index element={<Order />} />
+                <Route path="cart" element={<ShoppingCart />} />
             </Route>
         </Routes>
     )
