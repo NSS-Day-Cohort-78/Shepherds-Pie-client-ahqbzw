@@ -15,10 +15,10 @@ function App() {
           </>
         }
       >
-        
+        {/* Default route: Order page */}
         <Route index element={<Order />} />
 
-        
+        {/* Cart page */}
         <Route path="cart" element={<div>Shopping Cart</div>} />
       </Route>
     </Routes>
