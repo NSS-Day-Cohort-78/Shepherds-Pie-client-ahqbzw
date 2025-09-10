@@ -1,0 +1,52 @@
+Table Employees {
+  id int [pk, increment]
+  fullName varchar
+  role varchar
+}
+
+Table Orders {
+  id int [pk, increment]
+  tableNumber int
+  isDelivery boolean
+  employeeId int [ref: > Employees.id] 
+  delivererId int [ref: > Employees.id]
+  tip decimal
+  dateTime datetime
+}
+
+Table Pizzas {
+  id int [pk, increment]
+  order_id int [ref: > Orders.id]
+  sizeId int [ref: > PizzaSizes.id]
+  cheeseId int [ref: > Cheeses.id]
+  sauceId int [ref: > Sauces.id]
+}
+
+Table PizzaSizes {
+  id int [pk, increment]
+  name varchar
+  inches int
+  basePrice decimal
+}
+
+Table Cheeses {
+  id int [pk, increment]
+  name varchar
+}
+
+Table Sauces {
+  id int [pk, increment]
+  name varchar
+}
+
+Table Toppings {
+  id int [pk, increment]
+  name varchar
+  price decimal
+}
+
+Table PizzaToppings {
+  id int [pk, increment]
+  pizzaId int [ref: > Pizzas.id]
+  toppingId int [ref: > Toppings.id]
+}
