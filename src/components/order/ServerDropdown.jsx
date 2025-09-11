@@ -4,7 +4,7 @@ import { getEmployees } from "../services/EmployeesServices"
 export const ServerDropdown = ({ employees, setEmployees }) => {
     useEffect(() => {
         getEmployees().then(setEmployees)
-    })
+    }, [])
     return (
         <fieldset>
             <label htmlFor="server">Server</label>
