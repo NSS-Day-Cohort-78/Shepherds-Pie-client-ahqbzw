@@ -7,7 +7,7 @@ import { DriverDropdown } from "./DriverDropdown"
 import { DeliveryButton } from "./OrderTypeButton"
 
 export const Order = () => {
-    const [orderType, setOrderType] = useState("")
+    const [orderType, setOrderType] = useState(false)
     const [sizes, setSizes] = useState([])
     const [sauces, setSauces] = useState([])
     const [employees, setEmployees] = useState([])
@@ -20,7 +20,11 @@ export const Order = () => {
             <ChooseSauces sauces={sauces} setSauces={setSauces} />
             <ServerDropdown employees={employees} setEmployees={setEmployees} />
             <DeliveryButton orderType={orderType} setOrderType={setOrderType} />
-            <DriverDropdown drivers={drivers} setDrivers={setDrivers} />
+            <DriverDropdown
+                drivers={drivers}
+                setDrivers={setDrivers}
+                orderType={orderType}
+            />
         </form>
     )
 }
