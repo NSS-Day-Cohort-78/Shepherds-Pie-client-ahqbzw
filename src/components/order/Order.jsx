@@ -3,16 +3,17 @@ import "./order.css"
 import { ChooseSizes } from "./ChooseSizes"
 import { ChooseSauces } from "./ChooseSauces"
 import { ServerDropdown } from "./ServerDropdown"
+import { DriverDropdown } from "./DriverDropdown"
 import { ChooseToppings } from "./ChooseToppings"
-
 import { DeliveryButton } from "./OrderTypeButton"
 
 export const Order = () => {
-    const [orderType, setOrderType] = useState("")
+    const [orderType, setOrderType] = useState(false)
     const [sizes, setSizes] = useState([])
     const [sauces, setSauces] = useState([])
     const [toppings, setToppings] = useState([])
     const [employees, setEmployees] = useState([])
+    const [drivers, setDrivers] = useState([])
 
     return (
         <form>
@@ -22,6 +23,11 @@ export const Order = () => {
             <ChooseToppings toppings={toppings} setToppings={setToppings} />
             <ServerDropdown employees={employees} setEmployees={setEmployees} />
             <DeliveryButton orderType={orderType} setOrderType={setOrderType} />
+            <DriverDropdown
+                drivers={drivers}
+                setDrivers={setDrivers}
+                orderType={orderType}
+            />
         </form>
     )
 }
