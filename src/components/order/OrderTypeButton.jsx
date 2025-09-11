@@ -1,19 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 
-export const DeliveryButton = () => {
-    const [orderType, setOrderType] = useState('')
-    
-    
+export const DeliveryButton = ({ orderType, setOrderType }) => {
     return (
-        <div> 
-            <h3>How would you like to receive your order? </h3>
+        <fieldset className="OrderTypeButton">
+            <legend>How would you like to receive your order? </legend>
             <input
                 type="radio"
                 id="delivery"
                 name="orderType"
-                value="delivery"
-                checked={orderType === 'delivery'}
-                onChange={(event) => setOrderType(event.target.value)}
+                value={true}
+                onChange={event => setOrderType(event.target.value)}
             />
             <label htmlFor="delivery">Delivery</label>
 
@@ -21,15 +17,10 @@ export const DeliveryButton = () => {
                 type="radio"
                 id="carryout"
                 name="orderType"
-                value="carryout"
-                checked={orderType === 'carryout'}
-                onChange={(event) => setOrderType(event.target.value)}
+                value={false}
+                onChange={event => setOrderType(event.target.value)}
             />
             <label htmlFor="carryout">Carry Out</label>
-            
-            <p>Selected: {orderType} </p>
-        </div>
-
-
+        </fieldset>
     )
 }
