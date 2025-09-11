@@ -1,8 +1,8 @@
 {
-	"tabWidth": 4,
-	"experimentalTernaries": true,
-	"trailingComma": "none",
-	"semi": false,
-	"arrowParens": "avoid",
-	"bracketSpacing": true
+    "tabWidth": 4,
+    "experimentalTernaries": true,
+    "trailingComma": "none",
+    "semi": false,
+    "arrowParens": "avoid",
+    "bracketSpacing": true
 }
