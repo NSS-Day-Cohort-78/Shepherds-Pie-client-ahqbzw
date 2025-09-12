@@ -21,7 +21,7 @@ export const AddToOrderButton = ({
     useEffect(() => {
         getPizzas().then(setAllPizzas)
         getOrders().then(setAllOrders)
-    }, [pizza])
+    }, [])
     /* 
   orderId
   sizeId
@@ -41,6 +41,7 @@ export const AddToOrderButton = ({
 
     useEffect(() => {
         const pizzaId = allPizzas.length + 1
+        console.log(pizzaId)
         const copyIsChecked = [...isChecked]
         const filteredChecked = copyIsChecked
             .filter(c => {
@@ -52,6 +53,8 @@ export const AddToOrderButton = ({
                     toppingId: fil.id
                 }
             })
+
+        console.log(filteredChecked)
 
         setPizzaToppings(filteredChecked)
     }, [allPizzas, isChecked])
