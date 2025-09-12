@@ -15,7 +15,12 @@ export const ChooseSauces = ({ pizza, setPizza, sauces, setSauces }) => {
     return (
         <fieldset>
             <label htmlFor="sauces">Sauce</label>
-            <select onChange={handleChange} name="sauces" id="sauces">
+            <select
+                onChange={handleChange}
+                value={pizza.sauceId}
+                name="sauces"
+                id="sauces"
+            >
                 <option value="0">Choose Sauce</option>
                 {sauces.map(s => {
                     return (

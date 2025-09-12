@@ -21,7 +21,12 @@ export const ChooseSizes = ({
     return (
         <fieldset>
             <label htmlFor="sizes">Sizes</label>
-            <select onChange={handleChange} name="sizes" id="sizes">
+            <select
+                onChange={handleChange}
+                name="sizes"
+                value={pizza.sizeId}
+                id="sizes"
+            >
                 <option value="0">Choose Size</option>
                 {sizes.map(s => {
                     return (

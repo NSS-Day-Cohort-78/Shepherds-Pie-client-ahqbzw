@@ -1,7 +1,10 @@
 import React, { useEffect } from "react"
 import { addPizzaToOrder, getPizzas } from "../services/PizzasServices"
 import { getOrders } from "../services/OrdersServices"
-import { addPizzaToppingsToOrder } from "../services/ToppingsServices"
+import {
+    addPizzaToppingsToOrder,
+    getToppings
+} from "../services/ToppingsServices"
 
 export const AddToOrderButton = ({
     pizzaToppings,
@@ -12,12 +15,13 @@ export const AddToOrderButton = ({
     pizza,
     allOrders,
     setAllOrders,
-    setPizza
+    setPizza,
+    setToppings
 }) => {
     useEffect(() => {
         getPizzas().then(setAllPizzas)
         getOrders().then(setAllOrders)
-    }, [])
+    }, [pizza])
     /* 
   orderId
   sizeId
@@ -27,7 +31,7 @@ export const AddToOrderButton = ({
 
     // get pizza for db
     useEffect(() => {
-        const orderId = allPizzas.length + 1
+        const orderId = allOrders.length + 1
         const copyPizza = { ...pizza }
         copyPizza.orderId = orderId
         setPizza(copyPizza)
@@ -58,6 +62,16 @@ export const AddToOrderButton = ({
 
         pizzaToppings.forEach(topping => {
             addPizzaToppingsToOrder(topping)
+        })
+
+        getPizzas().then(setAllPizzas)
+        getToppings().then(setToppings)
+
+        setPizza({
+            orderId: 0,
+            sizeId: 0,
+            cheeseId: 0,
+            sauceId: 0
         })
     }
 

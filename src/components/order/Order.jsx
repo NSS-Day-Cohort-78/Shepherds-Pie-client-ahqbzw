@@ -88,6 +88,7 @@ export const Order = () => {
                 allOrders={allOrders}
                 setAllOrders={setAllOrders}
                 setPizza={setPizza}
+                setToppings={setToppings}
             />
         </form>
     )

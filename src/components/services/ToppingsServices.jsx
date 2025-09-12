@@ -3,7 +3,7 @@ export const getToppings = () => {
 }
 
 export const addPizzaToppingsToOrder = data => {
-    fetch(`http://localhost:8088/pizzaToppings`, {
+    return fetch(`http://localhost:8088/pizzaToppings`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { getToppings } from "../services/ToppingsServices"
 
 export const ChooseToppings = ({
@@ -15,8 +15,9 @@ export const ChooseToppings = ({
         const copyIsChecked = [...isChecked]
 
         const found = copyIsChecked.map(c => {
-            c.id === parseInt(e.target.value) && (c.checked = !c.checked)
-            return c
+            return c.id === parseInt(e.target.value)
+                ? (c.checked = !c.checked)
+                : c
         })
 
         setIsChecked(found)

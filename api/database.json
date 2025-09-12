@@ -167,39 +167,48 @@
   "pizzas": [
     {
       "orderId": 1,
-      "sizeId": 3,
-      "cheeseId": 1,
-      "sauceId": 5,
+      "sizeId": 1,
+      "cheeseId": 2,
+      "sauceId": 2,
       "id": 1
+    },
+    {
+      "orderId": 1,
+      "sizeId": 1,
+      "cheeseId": 2,
+      "sauceId": 2,
+      "id": 2
     },
     {
       "orderId": 1,
       "sizeId": 2,
       "cheeseId": 3,
+      "sauceId": 2,
+      "id": 3
+    },
+    {
+      "orderId": 1,
+      "sizeId": 5,
+      "cheeseId": 1,
       "sauceId": 1,
-      "id": 2
+      "id": 4
     }
   ],
   "pizzaToppings": [
     {
       "pizzaId": 1,
-      "toppingId": 1,
+      "toppingId": 2,
       "id": 1
     },
     {
-      "pizzaId": 1,
-      "toppingId": 3,
+      "pizzaId": 2,
+      "toppingId": 2,
       "id": 2
     },
     {
-      "pizzaId": 1,
-      "toppingId": 4,
+      "pizzaId": 3,
+      "toppingId": 1,
       "id": 3
-    },
-    {
-      "pizzaId": 1,
-      "toppingId": 5,
-      "id": 4
     }
   ]
 }
