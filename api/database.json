@@ -1,178 +1,183 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "fullName": "Alex Ramirez",
-      "role": "driver"
-    },
-    {
-      "id": 2,
-      "fullName": "Jordan Lee",
-      "role": "server"
-    },
-    {
-      "id": 3,
-      "fullName": "Taylor Nguyen",
-      "role": "server"
-    },
-    {
-      "id": 4,
-      "fullName": "Morgan Patel",
-      "role": "driver"
-    },
-    {
-      "id": 5,
-      "fullName": "Casey Johnson",
-      "role": "server"
-    },
-    {
-      "id": 6,
-      "fullName": "Riley Chen",
-      "role": "driver"
-    },
-    {
-      "id": 7,
-      "fullName": "Drew Williams",
-      "role": "server"
-    },
-    {
-      "id": 8,
-      "fullName": "Jamie Martinez",
-      "role": "driver"
-    }
-  ],
-  "pizzaSizes": [
-    {
-      "id": 1,
-      "name": "kids",
-      "inches": 8,
-      "basePrice": 6
-    },
-    {
-      "id": 2,
-      "name": "small",
-      "inches": 10,
-      "basePrice": 10
-    },
-    {
-      "id": 3,
-      "name": "medium",
-      "inches": 14,
-      "basePrice": 12.5
-    },
-    {
-      "id": 4,
-      "name": "large",
-      "inches": 16,
-      "basePrice": 15
-    },
-    {
-      "id": 5,
-      "name": "x large",
-      "inches": 18,
-      "basePrice": 18
-    }
-  ],
-  "cheeses": [
-    {
-      "id": 1,
-      "name": "Mozzarella"
-    },
-    {
-      "id": 2,
-      "name": "Buffalo Mozzarella"
-    },
-    {
-      "id": 3,
-      "name": "Four Cheese"
-    },
-    {
-      "id": 4,
-      "name": "Vegan"
-    },
-    {
-      "id": 5,
-      "name": "Ricotta"
-    },
-    {
-      "id": 6,
-      "name": "None"
-    }
-  ],
-  "sauces": [
-    {
-      "id": 1,
-      "name": "Marinara"
-    },
-    {
-      "id": 2,
-      "name": "Arrabbiata"
-    },
-    {
-      "id": 3,
-      "name": "Garlic White"
-    },
-    {
-      "id": 4,
-      "name": "Diavolo"
-    },
-    {
-      "id": 5,
-      "name": "None"
-    }
-  ],
-  "toppings": [
-    {
-      "id": 1,
-      "name": "Sausage",
-      "price": 1
-    },
-    {
-      "id": 2,
-      "name": "Pepperoni",
-      "price": 0.75
-    },
-    {
-      "id": 3,
-      "name": "Mushroom",
-      "price": 0.5
-    },
-    {
-      "id": 4,
-      "name": "Onion",
-      "price": 0.75
-    },
-    {
-      "id": 5,
-      "name": "Green pepper",
-      "price": 0.5
-    },
-    {
-      "id": 6,
-      "name": "Black olive",
-      "price": 1
-    },
-    {
-      "id": 7,
-      "name": "Basil",
-      "price": 0.5
-    },
-    {
-      "id": 8,
-      "name": "Extra cheese",
-      "price": 1
-    }
-  ],
-  "orders": [
-    {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    }
-  ],
-  "pizzas": []
+    "employees": [
+        {
+            "id": 1,
+            "fullName": "Alex Ramirez",
+            "role": "driver"
+        },
+        {
+            "id": 2,
+            "fullName": "Jordan Lee",
+            "role": "server"
+        },
+        {
+            "id": 3,
+            "fullName": "Taylor Nguyen",
+            "role": "server"
+        },
+        {
+            "id": 4,
+            "fullName": "Morgan Patel",
+            "role": "driver"
+        },
+        {
+            "id": 5,
+            "fullName": "Casey Johnson",
+            "role": "server"
+        },
+        {
+            "id": 6,
+            "fullName": "Riley Chen",
+            "role": "driver"
+        },
+        {
+            "id": 7,
+            "fullName": "Drew Williams",
+            "role": "server"
+        },
+        {
+            "id": 8,
+            "fullName": "Jamie Martinez",
+            "role": "driver"
+        }
+    ],
+    "pizzaSizes": [
+        {
+            "id": 1,
+            "name": "kids",
+            "inches": 8,
+            "basePrice": 6
+        },
+        {
+            "id": 2,
+            "name": "small",
+            "inches": 10,
+            "basePrice": 10
+        },
+        {
+            "id": 3,
+            "name": "medium",
+            "inches": 14,
+            "basePrice": 12.5
+        },
+        {
+            "id": 4,
+            "name": "large",
+            "inches": 16,
+            "basePrice": 15
+        },
+        {
+            "id": 5,
+            "name": "x large",
+            "inches": 18,
+            "basePrice": 18
+        }
+    ],
+    "cheeses": [
+        {
+            "id": 1,
+            "name": "Mozzarella"
+        },
+        {
+            "id": 2,
+            "name": "Buffalo Mozzarella"
+        },
+        {
+            "id": 3,
+            "name": "Four Cheese"
+        },
+        {
+            "id": 4,
+            "name": "Vegan"
+        },
+        {
+            "id": 5,
+            "name": "Ricotta"
+        },
+        {
+            "id": 6,
+            "name": "None"
+        }
+    ],
+    "sauces": [
+        {
+            "id": 1,
+            "name": "Marinara"
+        },
+        {
+            "id": 2,
+            "name": "Arrabbiata"
+        },
+        {
+            "id": 3,
+            "name": "Garlic White"
+        },
+        {
+            "id": 4,
+            "name": "Diavolo"
+        },
+        {
+            "id": 5,
+            "name": "None"
+        }
+    ],
+    "toppings": [
+        {
+            "id": 1,
+            "name": "Sausage",
+            "price": 1
+        },
+        {
+            "id": 2,
+            "name": "Pepperoni",
+            "price": 0.75
+        },
+        {
+            "id": 3,
+            "name": "Mushroom",
+            "price": 0.5
+        },
+        {
+            "id": 4,
+            "name": "Onion",
+            "price": 0.75
+        },
+        {
+            "id": 5,
+            "name": "Green pepper",
+            "price": 0.5
+        },
+        {
+            "id": 6,
+            "name": "Black olive",
+            "price": 1
+        },
+        {
+            "id": 7,
+            "name": "Basil",
+            "price": 0.5
+        },
+        {
+            "id": 8,
+            "name": "Extra cheese",
+            "price": 1
+        }
+    ],
+    "orders": [],
+    "pizzas": [
+        {
+            "orderId": 0,
+            "sizeId": 2,
+            "cheeseId": 1,
+            "sauceId": 2,
+            "id": 1
+        }
+    ],
+    "pizzaToppings": [
+        {
+            "pizzaId": 2,
+            "toppingId": 6,
+            "id": 1
+        }
+    ]
 }

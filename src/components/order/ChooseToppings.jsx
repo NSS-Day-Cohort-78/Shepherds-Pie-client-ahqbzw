@@ -1,5 +1,6 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { getToppings } from "../services/ToppingsServices"
+import { CheckBoxes } from "./CheckBoxes"
 
 export const ChooseToppings = ({
     toppings,
@@ -11,32 +12,20 @@ export const ChooseToppings = ({
         getToppings().then(setToppings)
     }, [])
 
-    const handleChange = e => {
-        const copyIsChecked = [...isChecked]
-
-        const found = copyIsChecked.map(c => {
-            c.id === parseInt(e.target.value) && (c.checked = !c.checked)
-            return c
-        })
-
-        setIsChecked(found)
-    }
-
     return (
         <fieldset>
             <legend>Choose Toppings</legend>
-            {toppings.map(t => (
-                <div key={t.id}>
-                    <input
-                        onChange={handleChange}
-                        type="checkbox"
-                        name="toppingId"
-                        id={`topping-${t.id}`}
-                        value={t.id}
+            {toppings.map(t => {
+                return (
+                    <CheckBoxes
+                        key={t.id}
+                        isChecked={isChecked}
+                        setIsChecked={setIsChecked}
+                        t={t}
+                        toppings={toppings}
                     />
-                    <label htmlFor={`topping-${t.id}`}>{t.name}</label>
-                </div>
-            ))}
+                )
+            })}
         </fieldset>
     )
 }
