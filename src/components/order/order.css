@@ -31,3 +31,13 @@ select {
     padding-left: 0.3rem;
     cursor: pointer;
 }
+.OrderTypeButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+legend {
+    font-size: 1rem;
+}
+
+/* this should work */

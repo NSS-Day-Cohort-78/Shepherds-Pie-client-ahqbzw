@@ -41,7 +41,6 @@
       "role": "driver"
     }
   ],
-
   "pizzaSizes": [
     {
       "id": 1,
@@ -74,9 +73,11 @@
       "basePrice": 18
     }
   ],
-
   "cheeses": [
-    { "id": 1, "name": "Mozzarella" },
+    {
+      "id": 1,
+      "name": "Mozzarella"
+    },
     {
       "id": 2,
       "name": "Buffalo Mozzarella"
@@ -98,7 +99,6 @@
       "name": "None"
     }
   ],
-
   "sauces": [
     {
       "id": 1,
@@ -121,12 +121,11 @@
       "name": "None"
     }
   ],
-
   "toppings": [
     {
       "id": 1,
       "name": "Sausage",
-      "price": 1.0
+      "price": 1
     },
     {
       "id": 2,
@@ -151,7 +150,7 @@
     {
       "id": 6,
       "name": "Black olive",
-      "price": 1.0
+      "price": 1
     },
     {
       "id": 7,
@@ -161,11 +160,19 @@
     {
       "id": 8,
       "name": "Extra cheese",
-      "price": 1.0
+      "price": 1
     }
   ],
-
-  "orders": [],
-
+  "orders": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ],
   "pizzas": []
 }
