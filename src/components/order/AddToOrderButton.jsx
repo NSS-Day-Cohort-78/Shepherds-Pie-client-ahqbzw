@@ -1,17 +1,47 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { getPizzas } from "../services/PizzasServices"
 
+export const AddToOrderButton = ({
+    pizzaToppings,
+    setPizzaToppings,
+    isChecked,
+    allPizzas,
+    setAllPizzas,
+    pizza
+}) => {
+    /* 
+  orderId
+  sizeId
+  cheeseId
+  sauceId
+  */
 
-export const AddToOrderButton = () => {
+    // get toppings for db
 
-  const handleOrder = (e) => {
-    e.preventDefault()
-    console.log("I work!")
-  }
+    useEffect(() => {
+        getPizzas().then(setAllPizzas)
+    }, [])
 
-  return (
-    <button
-      onClick={handleOrder}>
-      Add to Order
-    </button>
-  )
+    useEffect(() => {
+        const pizzaId = allPizzas.length
+        const copyIsChecked = [...isChecked]
+        const filteredChecked = copyIsChecked
+            .filter(c => {
+                return c.checked
+            })
+            .map(fil => {
+                return {
+                    pizzaId: pizzaId + 1,
+                    toppingId: fil.id
+                }
+            })
+
+        setPizzaToppings(filteredChecked)
+    }, [allPizzas, isChecked])
+
+    const handleOrder = e => {
+        e.preventDefault()
+    }
+
+    return <button onClick={handleOrder}>Add to Order</button>
 }

@@ -9,8 +9,6 @@ import { DeliveryButton } from "./OrderTypeButton"
 import { ChooseCheeses } from "./ChooseCheeses"
 import { AddToOrderButton } from "./AddToOrderButton"
 
-
-
 export const Order = () => {
     const [orderType, setOrderType] = useState(false)
     const [sizes, setSizes] = useState([])
@@ -20,10 +18,12 @@ export const Order = () => {
     const [employees, setEmployees] = useState([])
     const [drivers, setDrivers] = useState([])
     const [isChecked, setIsChecked] = useState([])
-    const [currentSize, setCurrentSize] = useState(0)
-    const [currentSauce, setCurrentSauce] = useState(0)
+
+    const [allPizzas, setAllPizzas] = useState([])
 
     const [pizza, setPizza] = useState({
+        // refactor, store size cheese sauce in here instead
+        orderId: 0,
         sizeId: 0,
         cheeseId: 0,
         sauceId: 0
@@ -47,12 +47,14 @@ export const Order = () => {
         <form>
             <h1>What kind of pizza would you like?</h1>
             <ChooseSizes
-                setCurrentSize={setCurrentSize}
+                pizza={pizza}
+                setPizza={setPizza}
                 sizes={sizes}
                 setSizes={setSizes}
             />
             <ChooseSauces
-                setCurrentSauce={setCurrentSauce}
+                pizza={pizza}
+                setPizza={setPizza}
                 sauces={sauces}
                 setSauces={setSauces}
             />
@@ -70,7 +72,14 @@ export const Order = () => {
                 setDrivers={setDrivers}
                 orderType={orderType}
             />
-            <AddToOrderButton/>
+            <AddToOrderButton
+                setPizzaToppings={setPizzaToppings}
+                pizzaToppings={pizzaToppings}
+                isChecked={isChecked}
+                setAllPizzas={setAllPizzas}
+                allPizzas={allPizzas}
+                pizza={pizza}
+            />
         </form>
     )
 }
