@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { getEmployees } from "../services/EmployeesServices"
 
-export const ServerDropdown = ({ employees, setEmployees, setCurrentEmployee }) => {
+export const ServerDropdown = ({ employees, setEmployees, setCurrentServer }) => {
     useEffect(() => {
         getEmployees().then(setEmployees)
     }, [])
@@ -9,7 +9,7 @@ export const ServerDropdown = ({ employees, setEmployees, setCurrentEmployee }) 
         <fieldset>
             <label htmlFor="server">Server</label>
             <select
-                onChange={e => setCurrentEmployee(parseInt(e.target.value)) }
+                onChange={e => setCurrentServer(parseInt(e.target.value)) }
                 name="server"
                 id="server"
             >

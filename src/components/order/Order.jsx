@@ -22,9 +22,9 @@ export const Order = () => {
     const [isChecked, setIsChecked] = useState([])
     const [currentSize, setCurrentSize] = useState(0)
     const [currentSauce, setCurrentSauce] = useState(0)
-    const [currentEmployee, setCurrentEmployee] = 
+    const [currentServer, setCurrentServer] = 
     useState(0)
-    const [currentOrder, setCurrentOrder] = useState({})
+   
 
     const [pizza, setPizza] = useState({
         sizeId: 0,
@@ -67,7 +67,7 @@ export const Order = () => {
                 setIsChecked={setIsChecked}
             />
             <ServerDropdown 
-                setCurrentEmployee={setCurrentEmployee}
+                setCurrentServer={setCurrentServer}
                 employees={employees}
                 setEmployees={setEmployees}
             />
