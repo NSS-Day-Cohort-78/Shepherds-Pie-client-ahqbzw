@@ -9,19 +9,24 @@ import { DeliveryButton } from "./OrderTypeButton"
 import { ChooseCheeses } from "./ChooseCheeses"
 import { AddToOrderButton } from "./AddToOrderButton"
 
-export const Order = () => {
+export const Order = ({
+    allOrders,
+    setAllOrders,
+    setCurrentDriver,
+    setCurrentServer,
+    employees,
+    setEmployees
+}) => {
     const [orderType, setOrderType] = useState(false)
     const [sizes, setSizes] = useState([])
     const [sauces, setSauces] = useState([])
     const [cheeses, setCheeses] = useState([])
     const [toppings, setToppings] = useState([])
-    const [employees, setEmployees] = useState([])
+
     const [drivers, setDrivers] = useState([])
     const [isChecked, setIsChecked] = useState([])
 
     const [allPizzas, setAllPizzas] = useState([])
-    const [allOrders, setAllOrders] = useState([])
-    const [currentServer, setCurrentServer] = useState(0)
 
     const [pizza, setPizza] = useState({
         // refactor, store size cheese sauce in here instead
@@ -82,6 +87,7 @@ export const Order = () => {
                 drivers={drivers}
                 setDrivers={setDrivers}
                 orderType={orderType}
+                setCurrentDriver={setCurrentDriver}
             />
             <AddToOrderButton
                 setPizzaToppings={setPizzaToppings}

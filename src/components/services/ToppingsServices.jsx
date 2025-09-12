@@ -11,3 +11,9 @@ export const addPizzaToppingsToOrder = data => {
         body: JSON.stringify(data)
     })
 }
+
+export const getPizzaToppingsExpand = () => {
+    return fetch(`http://localhost:8088/pizzaToppings?_expand=topping`).then(
+        res => res.json()
+    )
+}

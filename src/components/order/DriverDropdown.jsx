@@ -1,7 +1,12 @@
 import React, { useEffect } from "react"
 import { getDrivers } from "../services/EmployeesServices"
 
-export const DriverDropdown = ({ drivers, setDrivers, orderType }) => {
+export const DriverDropdown = ({
+    setCurrentDriver,
+    drivers,
+    setDrivers,
+    orderType
+}) => {
     useEffect(() => {
         getDrivers().then(setDrivers)
     }, [])
@@ -9,7 +14,12 @@ export const DriverDropdown = ({ drivers, setDrivers, orderType }) => {
     return (
         <fieldset>
             <label htmlFor="driver">Delivery Driver</label>
-            <select disabled={!JSON.parse(orderType)} name="driver" id="driver">
+            <select
+                onChange={e => setCurrentDriver(parseInt(e.target.value))}
+                disabled={!JSON.parse(orderType)}
+                name="driver"
+                id="driver"
+            >
                 <option value="0">Pick a driver</option>
                 {drivers.map(d => {
                     return (
