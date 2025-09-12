@@ -17,6 +17,7 @@ export const Order = () => {
     const [employees, setEmployees] = useState([])
     const [drivers, setDrivers] = useState([])
     const [isChecked, setIsChecked] = useState([])
+    const [currentSize, setCurrentSize] = useState(0)
 
     const [pizza, setPizza] = useState({
         sizeId: 0,
@@ -41,7 +42,11 @@ export const Order = () => {
     return (
         <form>
             <h1>What kind of pizza would you like?</h1>
-            <ChooseSizes sizes={sizes} setSizes={setSizes} />
+            <ChooseSizes
+                setCurrentSize={setCurrentSize}
+                sizes={sizes}
+                setSizes={setSizes}
+            />
             <ChooseSauces sauces={sauces} setSauces={setSauces} />
             <ChooseCheeses cheeses={cheeses} setCheeses={setCheeses} />
             <ChooseToppings
