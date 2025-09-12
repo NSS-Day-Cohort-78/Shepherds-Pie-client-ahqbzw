@@ -21,6 +21,7 @@ export const Order = () => {
 
     const [allPizzas, setAllPizzas] = useState([])
     const [allOrders, setAllOrders] = useState([])
+    const [currentServer, setCurrentServer] = useState(0)
 
     const [pizza, setPizza] = useState({
         // refactor, store size cheese sauce in here instead
@@ -71,7 +72,11 @@ export const Order = () => {
                 isChecked={isChecked}
                 setIsChecked={setIsChecked}
             />
-            <ServerDropdown employees={employees} setEmployees={setEmployees} />
+            <ServerDropdown
+                setCurrentServer={setCurrentServer}
+                employees={employees}
+                setEmployees={setEmployees}
+            />
             <DeliveryButton orderType={orderType} setOrderType={setOrderType} />
             <DriverDropdown
                 drivers={drivers}
