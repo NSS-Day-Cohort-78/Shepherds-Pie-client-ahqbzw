@@ -20,6 +20,7 @@ export const Order = () => {
     const [isChecked, setIsChecked] = useState([])
 
     const [allPizzas, setAllPizzas] = useState([])
+    const [allOrders, setAllOrders] = useState([])
 
     const [pizza, setPizza] = useState({
         // refactor, store size cheese sauce in here instead
@@ -58,7 +59,12 @@ export const Order = () => {
                 sauces={sauces}
                 setSauces={setSauces}
             />
-            <ChooseCheeses cheeses={cheeses} setCheeses={setCheeses} pizza={pizza} setPizza={setPizza} />
+            <ChooseCheeses
+                cheeses={cheeses}
+                setCheeses={setCheeses}
+                pizza={pizza}
+                setPizza={setPizza}
+            />
             <ChooseToppings
                 toppings={toppings}
                 setToppings={setToppings}
@@ -79,6 +85,9 @@ export const Order = () => {
                 setAllPizzas={setAllPizzas}
                 allPizzas={allPizzas}
                 pizza={pizza}
+                allOrders={allOrders}
+                setAllOrders={setAllOrders}
+                setPizza={setPizza}
             />
         </form>
     )
