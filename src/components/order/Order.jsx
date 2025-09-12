@@ -14,6 +14,7 @@ export const Order = () => {
     const [toppings, setToppings] = useState([])
     const [employees, setEmployees] = useState([])
     const [drivers, setDrivers] = useState([])
+    const [isChecked, setIsChecked] = useState([])
 
     const [pizza, setPizza] = useState({
         sizeId: 0,
@@ -21,12 +22,19 @@ export const Order = () => {
         sauceId: 0
     })
 
-    // single pizza topping state
-
     // array of all toppings we choose
     const [pizzaToppings, setPizzaToppings] = useState([])
 
-    // add single pizza topping to array of all toppings
+    useEffect(() => {
+        const checkedArray = toppings.map(topping => {
+            return {
+                id: topping.id,
+                checked: false
+            }
+        })
+
+        setIsChecked(checkedArray)
+    }, [toppings])
 
     return (
         <form>
@@ -34,10 +42,10 @@ export const Order = () => {
             <ChooseSizes sizes={sizes} setSizes={setSizes} />
             <ChooseSauces sauces={sauces} setSauces={setSauces} />
             <ChooseToppings
-                pizzaToppings={pizzaToppings}
-                setPizzaToppings={setPizzaToppings}
                 toppings={toppings}
                 setToppings={setToppings}
+                isChecked={isChecked}
+                setIsChecked={setIsChecked}
             />
             <ServerDropdown employees={employees} setEmployees={setEmployees} />
             <DeliveryButton orderType={orderType} setOrderType={setOrderType} />

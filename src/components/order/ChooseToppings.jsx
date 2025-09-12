@@ -1,35 +1,25 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { getToppings } from "../services/ToppingsServices"
 
 export const ChooseToppings = ({
-    pizzaToppings,
-    setPizzaToppings,
     toppings,
-    setToppings
+    setToppings,
+    isChecked,
+    setIsChecked
 }) => {
     useEffect(() => {
         getToppings().then(setToppings)
     }, [])
 
-    // single pizza topping state
-    const [pizzaTop, setPizzaTop] = useState({
-        pizzaId: 0,
-        toppingId: 0
-    })
-
-    // add single pizza topping to array of all toppings
-
-    useEffect(() => {
-        const copyPizzaToppings = [...pizzaToppings, pizzaTop]
-        setPizzaToppings(copyPizzaToppings)
-    }, [pizzaTop])
-
-    // it is selecting a topping on checked and uncheck
     const handleChange = e => {
-        /* const copyPizzaTop = { ...pizzaTop }
-        copyPizzaTop[e.target.name] = e.target.value
-        setPizzaTop(copyPizzaTop) */
-        console.log(e.target.checked)
+        const copyIsChecked = [...isChecked]
+
+        const found = copyIsChecked.map(c => {
+            c.id === parseInt(e.target.value) && (c.checked = !c.checked)
+            return c
+        })
+
+        setIsChecked(found)
     }
 
     return (
