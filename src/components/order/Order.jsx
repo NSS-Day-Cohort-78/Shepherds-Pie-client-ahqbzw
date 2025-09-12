@@ -22,6 +22,9 @@ export const Order = () => {
     const [isChecked, setIsChecked] = useState([])
     const [currentSize, setCurrentSize] = useState(0)
     const [currentSauce, setCurrentSauce] = useState(0)
+    const [currentEmployee, setCurrentEmployee] = 
+    useState(0)
+    const [currentOrder, setCurrentOrder] = useState({})
 
     const [pizza, setPizza] = useState({
         sizeId: 0,
@@ -39,7 +42,7 @@ export const Order = () => {
                 checked: false
             }
         })
-
+    
         setIsChecked(checkedArray)
     }, [toppings])
 
@@ -63,7 +66,11 @@ export const Order = () => {
                 isChecked={isChecked}
                 setIsChecked={setIsChecked}
             />
-            <ServerDropdown employees={employees} setEmployees={setEmployees} />
+            <ServerDropdown 
+                setCurrentEmployee={setCurrentEmployee}
+                employees={employees}
+                setEmployees={setEmployees}
+            />
             <DeliveryButton orderType={orderType} setOrderType={setOrderType} />
             <DriverDropdown
                 drivers={drivers}
