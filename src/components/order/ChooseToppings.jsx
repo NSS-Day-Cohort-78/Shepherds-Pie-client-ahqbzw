@@ -26,9 +26,10 @@ export const ChooseToppings = ({
 
     // it is selecting a topping on checked and uncheck
     const handleChange = e => {
-        const copyPizzaTop = { ...pizzaTop }
+        /* const copyPizzaTop = { ...pizzaTop }
         copyPizzaTop[e.target.name] = e.target.value
-        setPizzaTop(copyPizzaTop)
+        setPizzaTop(copyPizzaTop) */
+        console.log(e.target.checked)
     }
 
     return (
