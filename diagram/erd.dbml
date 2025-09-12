@@ -16,7 +16,7 @@ Table Orders {
 
 Table Pizzas {
   id int [pk, increment]
-  order_id int [ref: > Orders.id]
+  orderId int [ref: > Orders.id]
   sizeId int [ref: > PizzaSizes.id]
   cheeseId int [ref: > Cheeses.id]
   sauceId int [ref: > Sauces.id]
