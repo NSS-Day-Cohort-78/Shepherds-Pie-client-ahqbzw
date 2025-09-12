@@ -7,6 +7,9 @@ import { DriverDropdown } from "./DriverDropdown"
 import { ChooseToppings } from "./ChooseToppings"
 import { DeliveryButton } from "./OrderTypeButton"
 import { ChooseCheeses } from "./ChooseCheeses"
+import { AddToOrderButton } from "./AddToOrderButton"
+
+
 
 export const Order = () => {
     const [orderType, setOrderType] = useState(false)
@@ -18,6 +21,7 @@ export const Order = () => {
     const [drivers, setDrivers] = useState([])
     const [isChecked, setIsChecked] = useState([])
     const [currentSize, setCurrentSize] = useState(0)
+    const [currentSauce, setCurrentSauce] = useState(0)
 
     const [pizza, setPizza] = useState({
         sizeId: 0,
@@ -47,7 +51,11 @@ export const Order = () => {
                 sizes={sizes}
                 setSizes={setSizes}
             />
-            <ChooseSauces sauces={sauces} setSauces={setSauces} />
+            <ChooseSauces
+                setCurrentSauce={setCurrentSauce}
+                sauces={sauces}
+                setSauces={setSauces}
+            />
             <ChooseCheeses cheeses={cheeses} setCheeses={setCheeses} pizza={pizza} setPizza={setPizza} />
             <ChooseToppings
                 toppings={toppings}
@@ -62,6 +70,7 @@ export const Order = () => {
                 setDrivers={setDrivers}
                 orderType={orderType}
             />
+            <AddToOrderButton/>
         </form>
     )
 }
