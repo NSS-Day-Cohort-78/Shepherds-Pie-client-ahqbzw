@@ -58,7 +58,7 @@ export const Order = () => {
                 sauces={sauces}
                 setSauces={setSauces}
             />
-            <ChooseCheeses cheeses={cheeses} setCheeses={setCheeses} />
+            <ChooseCheeses cheeses={cheeses} setCheeses={setCheeses} pizza={pizza} setPizza={setPizza} />
             <ChooseToppings
                 toppings={toppings}
                 setToppings={setToppings}
