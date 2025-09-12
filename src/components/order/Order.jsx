@@ -7,6 +7,9 @@ import { DriverDropdown } from "./DriverDropdown"
 import { ChooseToppings } from "./ChooseToppings"
 import { DeliveryButton } from "./OrderTypeButton"
 import { ChooseCheeses } from "./ChooseCheeses"
+import { AddToOrderButton } from "./AddToOrderButton"
+
+
 
 export const Order = () => {
     const [orderType, setOrderType] = useState(false)
@@ -62,6 +65,7 @@ export const Order = () => {
                 setDrivers={setDrivers}
                 orderType={orderType}
             />
+            <AddToOrderButton/>
         </form>
     )
 }
